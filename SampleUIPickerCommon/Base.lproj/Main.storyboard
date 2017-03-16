@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleUIPickerCommon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-92-4Lx">
+                                <rect key="frame" x="30" y="268" width="315" height="80"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.44491925339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="W43-wa-2OO"/>
+                                </constraints>
+                                <state key="normal" title="PIcker VC"/>
+                                <connections>
+                                    <action selector="showPickerVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfl-W4-riu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hew-Eu-FMg">
+                                <rect key="frame" x="34" y="369" width="307" height="80"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.44491925339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="f83-CN-aHo"/>
+                                    <constraint firstAttribute="height" constant="80" id="mH1-au-rAl"/>
+                                </constraints>
+                                <state key="normal" title="PIcker VC"/>
+                                <connections>
+                                    <action selector="showPickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gYK-Wh-5an"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jd3-92-4Lx" secondAttribute="trailing" constant="30" id="4qn-kZ-psR"/>
+                            <constraint firstItem="hew-Eu-FMg" firstAttribute="top" secondItem="Jd3-92-4Lx" secondAttribute="bottom" constant="21" id="KFF-a1-YnP"/>
+                            <constraint firstAttribute="trailing" secondItem="hew-Eu-FMg" secondAttribute="trailing" constant="34" id="MTl-MW-dub"/>
+                            <constraint firstItem="hew-Eu-FMg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="34" id="VTJ-JV-Y5u"/>
+                            <constraint firstItem="Jd3-92-4Lx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="248" id="Vjn-Hm-vhA"/>
+                            <constraint firstItem="Jd3-92-4Lx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="Wo5-lr-kzo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sampleButton" destination="Jd3-92-4Lx" id="kLq-RI-AGQ"/>
+                        <outlet property="sampleButton2" destination="hew-Eu-FMg" id="wKr-hF-Ij5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="102"/>
+        </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="f70-93-xAR">
+            <objects>
+                <viewController storyboardIdentifier="pickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9TY-bE-dg5" customClass="PickerViewController" customModule="SampleUIPickerCommon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QdM-5u-OyK"/>
+                        <viewControllerLayoutGuide type="bottom" id="sEg-2V-ZxV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8I8-qx-CbF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-aV-CPE">
+                                <rect key="frame" x="0.0" y="434" width="375" height="233"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMh-dS-LPS">
+                                        <rect key="frame" x="0.0" y="-27" width="375" height="44"/>
+                                        <items>
+                                            <barButtonItem title="Cancel" id="E4n-64-E0e">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="cancelButtonClicked:" destination="9TY-bE-dg5" id="QH9-Qu-Rz2"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="k9a-ou-v5Y"/>
+                                            <barButtonItem title="Done" id="W6R-LQ-7RN">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="doneButtonClicked:" destination="9TY-bE-dg5" id="kWa-Vn-5ds"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="barTintColor" red="0.7843137255" green="0.12549019610000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </toolbar>
+                                    <pickerView contentMode="scaleToFill" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="5mJ-nf-du8">
+                                        <rect key="frame" x="0.0" y="17" width="375" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9TY-bE-dg5" id="m9j-V6-eRu"/>
+                                            <outlet property="delegate" destination="9TY-bE-dg5" id="Ic0-yI-mEk"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5mJ-nf-du8" secondAttribute="bottom" id="1v7-i9-bmz"/>
+                                    <constraint firstItem="5mJ-nf-du8" firstAttribute="leading" secondItem="Csd-aV-CPE" secondAttribute="leading" id="JgN-P7-IeW"/>
+                                    <constraint firstAttribute="trailing" secondItem="aMh-dS-LPS" secondAttribute="trailing" id="RDe-QI-ef2"/>
+                                    <constraint firstItem="aMh-dS-LPS" firstAttribute="leading" secondItem="Csd-aV-CPE" secondAttribute="leading" id="ffC-bU-6jB"/>
+                                    <constraint firstAttribute="trailing" secondItem="5mJ-nf-du8" secondAttribute="trailing" id="sgx-Th-k9E"/>
+                                    <constraint firstItem="5mJ-nf-du8" firstAttribute="top" secondItem="aMh-dS-LPS" secondAttribute="bottom" id="yTh-dm-QLY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7843137255" green="0.12549019610000001" blue="0.14901960780000001" alpha="0.20433728449999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Csd-aV-CPE" secondAttribute="trailing" id="BzX-LI-VIq"/>
+                            <constraint firstItem="Csd-aV-CPE" firstAttribute="leading" secondItem="8I8-qx-CbF" secondAttribute="leading" id="jEQ-tW-a4I"/>
+                            <constraint firstItem="Csd-aV-CPE" firstAttribute="height" secondItem="8I8-qx-CbF" secondAttribute="height" multiplier="0.35" id="niZ-hA-085"/>
+                            <constraint firstItem="sEg-2V-ZxV" firstAttribute="top" secondItem="Csd-aV-CPE" secondAttribute="bottom" id="omM-rB-YGu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Csd-aV-CPE" id="IWO-AY-9gI"/>
+                        <outlet property="pickerView" destination="5mJ-nf-du8" id="dBH-yw-WIu"/>
+                        <outlet property="toolbar" destination="aMh-dS-LPS" id="IbU-s6-VT7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wV9-VF-4nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="108"/>
+        </scene>
+    </scenes>
+</document>
