@@ -13,7 +13,6 @@
 		8235D9B31E7A9FA10083BFA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8235D9B21E7A9FA10083BFA1 /* Assets.xcassets */; };
 		8235D9B61E7A9FA10083BFA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8235D9B41E7A9FA10083BFA1 /* LaunchScreen.storyboard */; };
 		8235D9BE1E7A9FB10083BFA1 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8235D9BD1E7A9FB10083BFA1 /* PickerViewController.swift */; };
-		8235D9C01E7AA3C60083BFA1 /* SamplePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8235D9BF1E7AA3C60083BFA1 /* SamplePickerView.swift */; };
 		8235D9C41E7AA8580083BFA1 /* TableAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8235D9C31E7AA8580083BFA1 /* TableAlertController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		8235D9B51E7A9FA10083BFA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8235D9B71E7A9FA10083BFA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8235D9BD1E7A9FB10083BFA1 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
-		8235D9BF1E7AA3C60083BFA1 /* SamplePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplePickerView.swift; sourceTree = "<group>"; };
 		8235D9C31E7AA8580083BFA1 /* TableAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,17 +58,48 @@
 		8235D9AA1E7A9FA10083BFA1 /* SampleUIPickerCommon */ = {
 			isa = PBXGroup;
 			children = (
-				8235D9BD1E7A9FB10083BFA1 /* PickerViewController.swift */,
 				8235D9AB1E7A9FA10083BFA1 /* AppDelegate.swift */,
-				8235D9AD1E7A9FA10083BFA1 /* ViewController.swift */,
-				8235D9AF1E7A9FA10083BFA1 /* Main.storyboard */,
+				824126661E7BB0710065CD24 /* TableInAlert */,
+				824126681E7BB0930065CD24 /* ModelUIPicker */,
+				824126671E7BB0820065CD24 /* Controller */,
+				824126691E7BB0AA0065CD24 /* View */,
 				8235D9B21E7A9FA10083BFA1 /* Assets.xcassets */,
-				8235D9B41E7A9FA10083BFA1 /* LaunchScreen.storyboard */,
 				8235D9B71E7A9FA10083BFA1 /* Info.plist */,
-				8235D9BF1E7AA3C60083BFA1 /* SamplePickerView.swift */,
-				8235D9C31E7AA8580083BFA1 /* TableAlertController.swift */,
 			);
 			path = SampleUIPickerCommon;
+			sourceTree = "<group>";
+		};
+		824126661E7BB0710065CD24 /* TableInAlert */ = {
+			isa = PBXGroup;
+			children = (
+				8235D9C31E7AA8580083BFA1 /* TableAlertController.swift */,
+			);
+			name = TableInAlert;
+			sourceTree = "<group>";
+		};
+		824126671E7BB0820065CD24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8235D9AD1E7A9FA10083BFA1 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		824126681E7BB0930065CD24 /* ModelUIPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8235D9BD1E7A9FB10083BFA1 /* PickerViewController.swift */,
+			);
+			name = ModelUIPicker;
+			sourceTree = "<group>";
+		};
+		824126691E7BB0AA0065CD24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8235D9B41E7A9FA10083BFA1 /* LaunchScreen.storyboard */,
+				8235D9AF1E7A9FA10083BFA1 /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +174,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8235D9C01E7AA3C60083BFA1 /* SamplePickerView.swift in Sources */,
 				8235D9BE1E7A9FB10083BFA1 /* PickerViewController.swift in Sources */,
 				8235D9C41E7AA8580083BFA1 /* TableAlertController.swift in Sources */,
 				8235D9AE1E7A9FA10083BFA1 /* ViewController.swift in Sources */,
@@ -309,6 +337,7 @@
 				8235D9BC1E7A9FA10083BFA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

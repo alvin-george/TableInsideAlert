@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
+protocol UIPickerControllerDataDelegate {
+    func getPickerData (selectedIndex : Int , selectedItem : String?)
+}
 class PickerViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var toolbar: UIToolbar!
@@ -17,16 +21,16 @@ class PickerViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
     var pickerViewItems: [String]?
     var doneButtonClick:((_ selectedIndex: Int)->Void)!
     var selectedIndex: Int = 0
-   
+    
     var currentViewController : String =  String()
     var targetViewController :UIViewController?
+    
+    var delegate:UIPickerControllerDataDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate =  self
-        
     }
-
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -51,19 +55,12 @@ class PickerViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
     
     @IBAction func doneButtonClicked(_ sender: AnyObject) {
         
-
-            
-            UserDefaults.standard.setValue(selectedIndex, forKey: "picker_selected_index")
-            UserDefaults.standard.setValue(pickerViewItems?[selectedIndex], forKey: "picker_selected_item")
-        
-        let vc =  ViewController()
-        vc.getPickerData(selectedIndex: selectedIndex, selectedItem: pickerViewItems?[selectedIndex])
-        
-            
-            self.dismiss(animated: true, completion: nil)
-        
+        DispatchQueue.main.async {
+            self.delegate.getPickerData(selectedIndex: self.selectedIndex, selectedItem: self.pickerViewItems?[self.selectedIndex])
+        }
+        self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func cancelButtonClicked(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)

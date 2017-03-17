@@ -11,9 +11,8 @@ import Foundation
 
 protocol AlertTableControlDelegate {
     
-    func getSelectedItem(selectedItemIndex : Int?, selectedItemTitle : String?)
+    func getSelectedItemFromAlert(selectedItemIndex : Int, selectedItemTitle : String?)
 }
-
 
 class TableAlertController: UIAlertController, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate {
     
@@ -24,9 +23,7 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
     var alertTableViewArray = [String]()
     var alertSelectedIndex: Int = Int()
     
-    var alertTableControlDelegate:AlertTableControlDelegate!
-    
-    
+    var delegate:AlertTableControlDelegate!
     
     required public convenience init(title: String, message: String, alertPreferredStyle: UIAlertControllerStyle?, tableItems : [String]) {
         self.init()
@@ -38,7 +35,6 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      // self.preferredStyle = UIAlertControllerStyle.actionSheet
         
         alertTableView = UITableView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y+10 , width: self.view.bounds.size.width-10, height: self.view.bounds.size.height))
         
@@ -55,6 +51,7 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction) -> Void in
             
+            
         })
         self.addAction(cancelAction)
         //
@@ -65,7 +62,7 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
         
     }
     
-    //SideMenu Table
+    //Alert Table
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -96,18 +93,11 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
-        
         alertSelectedIndex =  indexPath.row
-        alertTableControlDelegate?.getSelectedItem(selectedItemIndex: indexPath.row, selectedItemTitle: alertTableViewArray[indexPath.row])
         
+        delegate.getSelectedItemFromAlert(selectedItemIndex: indexPath.row, selectedItemTitle: alertTableViewArray[indexPath.row])
         self.dismiss(animated: true, completion: nil)
     }
-    
-    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int){
-        
-        print(buttonIndex)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
