@@ -38,12 +38,14 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
         
         alertTableView = UITableView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y+10 , width: self.view.bounds.size.width-10, height: self.view.bounds.size.height))
         
-        alertTableView.separatorStyle = .none
+        alertTableView.separatorStyle = .singleLine
+        alertTableView.separatorColor =  UIColor.lightGray
         alertTableView.tag = 1
         alertTableView.isUserInteractionEnabled = true
         alertTableView.allowsSelection = true
         alertTableView.dataSource =  self
         alertTableView.delegate =  self
+        
         
         tableController.preferredContentSize = CGSize(width: self.view.bounds.size.width, height: screenSize.height/4.5)
         tableController.tableView =  alertTableView
@@ -80,8 +82,12 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
         
         let cell = UITableViewCell()
         
+        
+        cell.contentView.backgroundColor =  UIColor.init(colorLiteralRed: 200, green: 30, blue: 38, alpha: 1.0)
+        
         let label =  UILabel(frame : CGRect(x: 20, y: 0, width: self.view.bounds.size.width, height: 40))
         label.textColor =  UIColor.darkGray
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.init(name: "Helvetica", size: 17)
         cell.contentView.addSubview(label)
         label.text  = alertTableViewArray[indexPath.row]
@@ -98,6 +104,19 @@ class TableAlertController: UIAlertController, UITableViewDataSource, UITableVie
         delegate.getSelectedItemFromAlert(selectedItemIndex: indexPath.row, selectedItemTitle: alertTableViewArray[indexPath.row])
         self.dismiss(animated: true, completion: nil)
     }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell  = tableView.cellForRow(at: indexPath)
+        cell!.contentView.backgroundColor = UIColor.cyan
+    }
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell  = tableView.cellForRow(at: indexPath)
+        cell!.contentView.backgroundColor = .clear
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        let verticalIndicator: UIImageView = (scrollView.subviews[(scrollView.subviews.count - 1)] as! UIImageView)
+        verticalIndicator.backgroundColor = UIColor.red
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
